@@ -1,0 +1,35 @@
+.address-list {
+  width: 350px;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: white;
+  overflow: hidden;
+}
+
+.address-item {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.address-item:last-child {
+  border-bottom: none;
+}
+
+.address-item:hover {
+  background-color: #f5f5f5;
+}
+
+.address-item p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.address-item span {
+  display: block;
+  margin-top: 5px;
+  font-size: 12px;
+  color: #777;
+}

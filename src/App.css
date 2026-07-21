@@ -1,3 +1,9 @@
+:root {
+  --main-color: #d86b28;
+  --sub-color: #bd4415;
+  --text-color: #333;
+  --border-color: #592112;
+}
 /* 전체 브라우저 */
 body {
   margin: 0;

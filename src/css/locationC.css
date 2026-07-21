@@ -1,0 +1,88 @@
+.input-box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.input-box label {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.input-box input {
+  width: 400px;
+  height: 45px;
+
+  padding: 0 15px;
+
+  border: 1px solid #ddd;
+  border-radius: 10px;
+
+  font-size: 15px;
+  outline: none;
+
+  box-sizing: border-box;
+}
+
+.input-box input:focus {
+  border-color: var(--sub-color);
+}
+
+/* 검색창 */
+.search {
+  position: relative;
+  width: 400px;
+}
+
+.search input {
+  width: 100%;
+  height: 45px;
+
+  padding: 0 45px 0 15px;
+
+  border: 1px solid #ddd;
+  border-radius: 10px;
+
+  font-size: 15px;
+  outline: none;
+
+  box-sizing: border-box;
+}
+
+.search input:focus {
+  border-color: var(--sub-color);
+}
+.search button {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+.search img {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  transform: translateY(-50%);
+}
+.main-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+.main-button button {
+  width: 95%;
+  height: 50px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--border-color);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.main-button button:hover {
+  opacity: 0.9;
+}

@@ -23,7 +23,7 @@ export const getLocations = () => {
 
 // 위치 추가
 export const createLocation = (data) => {
-  return api.post("/location/addition", data);
+  return api.post("/location/add", data);
 };
 
 // 특정 위치 조회: 수정화면

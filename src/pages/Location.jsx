@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 import { getLocations } from "../api/locationApi";
 import logo from "../assets/logo.png";
 function Location() {
   const [locations, setLocations] = useState([]);
-
+  const navigate = useNavigate();
   useEffect(() => {
     loadLocation();
   }, []);
@@ -20,7 +20,6 @@ function Location() {
       <div className="location-logo">
         <img src={logo} alt="logo" />
       </div>
-
       <div className="address-list">
         <h1>내 주소 목록</h1>
 
@@ -34,6 +33,11 @@ function Location() {
             <div className="Ubutton">수정하기 ▸</div>
           </div>
         ))}
+      </div>
+      <div className="main-button">
+        <button onClick={() => navigate("/location/add")}>
+          + 다른 주소 추가하기
+        </button>
       </div>
     </div>
   );
