@@ -1,0 +1,55 @@
+/* 전체 브라우저 */
+body {
+  margin: 0;
+  background-color: white;
+}
+
+/* 모바일 앱 영역 */
+.app-container {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-right: 20px;
+
+  background-color: #fdfbf7;
+}
+.h1 {
+  margin: 20px;
+}
+.location-logo {
+  display: flex;
+  justify-content: left; /* 가로 중앙 */
+  align-items: center; /* 세로 중앙 */
+
+  width: 100%;
+  padding: 20px 0;
+}
+
+.location-logo img {
+  width: 50px; /* 로고 크기 */
+  height: auto; /* 비율 유지 */
+}
+.address-item {
+  display: flex;
+  justify-content: space-between; /* 왼쪽 내용, 오른쪽 버튼 */
+  align-items: center;
+
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.address-item h3 {
+  margin: 0 0 5px;
+  color: #49454f;
+}
+
+.address-item p {
+  margin: 0;
+}
+
+.Ubutton {
+  cursor: pointer;
+}
