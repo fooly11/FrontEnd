@@ -40,3 +40,7 @@ export const updateLocation = (id, data) => {
 export const deleteLocation = (id) => {
   return api.delete(`/location/remove/${id}`);
 };
+//위치 선택
+export const checkLocation = (id) => {
+  return api.put(`/location/check/${id}`);
+};

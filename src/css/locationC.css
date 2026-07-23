@@ -70,7 +70,12 @@
 .main-button {
   display: flex;
   justify-content: center;
-  margin-top: 80px;
+  margin-top: auto;
+  position: fixed;
+  gap: 15px;
+  bottom: 30px;
+  width: 430px;
+  max-width: 100%;
 }
 .main-button button {
   width: 95%;
@@ -85,4 +90,13 @@
 }
 .main-button button:hover {
   opacity: 0.9;
+}
+.main-button .back-button {
+  background-color: var(--back-color);
+  color: #555;
+}
+.main-button button:disabled {
+  background-color: #ccc;
+  color: white;
+  cursor: not-allowed;
 }

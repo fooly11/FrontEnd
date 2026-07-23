@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-
+import { useNavigate } from "react-router-dom";
 import { createLocation } from "../api/locationApi";
 import logo from "../assets/logo1.png";
 import "./../css/locationC.css";
 
 function LocationC() {
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     name: "",
     address: "",
@@ -43,6 +44,7 @@ function LocationC() {
       console.log("에러:", error);
     }
   };
+
   useEffect(() => {
     console.log("검색어 변경:", keyword);
 
@@ -65,12 +67,24 @@ function LocationC() {
       [e.target.name]: e.target.value,
     });
   };
-
+  const isValid = form.name.trim() !== "" && form.address.trim() !== "";
   const submit = async () => {
-    await createLocation(form);
-    alert("주소 추가 완료");
-  };
+    if (!form.name || !form.address) {
+      alert("주소 별칭과 주소를 입력해주세요.");
+      return;
+    }
 
+    try {
+      await createLocation(form);
+
+      alert("주소가 추가되었습니다!");
+
+      navigate("/location/view");
+    } catch (error) {
+      console.log(error);
+      alert("주소 추가에 실패하였습니다. 다시 시도해 주세요.");
+    }
+  };
   return (
     <div>
       <div className="location-logo">
@@ -133,7 +147,15 @@ function LocationC() {
       </div>
 
       <div className="main-button">
-        <button onClick={submit}>추가하기</button>
+        <button
+          className="back-button"
+          onClick={() => navigate("/location/view")}
+        >
+          이전
+        </button>
+        <button onClick={submit} disabled={!isValid}>
+          추가하기
+        </button>
       </div>
     </div>
   );

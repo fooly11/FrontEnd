@@ -1,35 +1,85 @@
+.address-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 .address-list {
-  width: 350px;
-  margin-top: 10px;
-  border: 1px solid #ddd;
+  height: 100%;
+}
+
+.address-scroll {
+  max-height: 310px; /* 원하는 높이 */
+  overflow-y: auto;
+}
+.address-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.address-info h3 {
+  margin: 0;
+}
+
+.address-info p {
+  margin: 5px 0 0;
+  word-break: break-word;
+}
+.Ubutton {
+  flex-shrink: 0;
+}
+
+.Ubutton button {
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  font-size: 13px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.hamburger-area {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.hamburger-button {
+  background: none;
+  color: var(--border-color);
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.menu {
+  position: absolute;
+  left: 0;
+  top: 40px;
+  width: 100px;
+  font-size: 13px;
+  background: var(--back-color);
   border-radius: 10px;
-  background: white;
+  z-index: 9999;
   overflow: hidden;
 }
 
-.address-item {
-  padding: 12px 15px;
-  border-bottom: 1px solid #eee;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.address-item:last-child {
-  border-bottom: none;
-}
-
-.address-item:hover {
-  background-color: #f5f5f5;
-}
-
-.address-item p {
+.menu p {
   margin: 0;
-  font-size: 14px;
+  padding: 12px 0;
+
+  text-align: center;
+  cursor: pointer;
+}
+.check-btn {
+  flex-shrink: 0;
+  border: #ccc;
+  background: transparent;
+  padding: 0;
+  color: #ccc;
+  font-size: 20px;
+  cursor: pointer;
 }
 
-.address-item span {
-  display: block;
-  margin-top: 5px;
-  font-size: 12px;
-  color: #777;
+.check-btn.active {
+  color: var(--main-color);
 }
