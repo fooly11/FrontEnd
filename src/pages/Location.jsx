@@ -7,7 +7,7 @@ import "./../css/location.css";
 
 function Location() {
   const [locations, setLocations] = useState([]);
-
+  const [selectedId, setSelectedId] = useState(null);
   const navigate = useNavigate();
 
   const [menuOpen, setMenuOpen] = useState(false);
@@ -23,8 +23,15 @@ function Location() {
   };
 
   const handleCheck = async (id) => {
-    await checkLocation(id);
-    loadLocation();
+    try {
+      // 화면 먼저 변경
+      setSelectedId(id);
+
+      // DB 업데이트
+      await checkLocation(id);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
@@ -56,7 +63,9 @@ function Location() {
           {locations.map((location) => (
             <div className="address-item" key={location.id}>
               <button
-                className={`check-btn ${location.is_check ? "active" : ""}`}
+                className={`check-btn ${
+                  selectedId === location.id ? "active" : ""
+                }`}
                 onClick={() => handleCheck(location.id)}
               >
                 ✔
