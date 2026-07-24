@@ -1,64 +1,60 @@
+/* create와 update 영역 css가 중복돼서 파일 하나로 합침 */
+/* input 영역 */
 .input-box {
   display: flex;
   flex-direction: column;
   gap: 20px;
   padding: 20px;
 }
-
+/* input 박스 앞에 라벨 */
 .input-box label {
   font-size: 14px;
   margin-top: 10px;
 }
-
+/* input박스 영역 */
 .input-box input {
   width: 400px;
   height: 45px;
-
   padding: 0 15px;
-
   border: 1px solid #ddd;
   border-radius: 10px;
-
   font-size: 15px;
   outline: none;
-
   box-sizing: border-box;
 }
-
+/* input 박스를 선택하면 테두리 색깔 변경 */
 .input-box input:focus {
   border-color: var(--sub-color);
 }
 
-/* 검색창 */
+/* 주소 검색창 */
 .search {
   position: relative;
   width: 400px;
 }
-
+/* 주소 검색 입력 input 박스 */
 .search input {
   width: 100%;
   height: 45px;
-
   padding: 0 45px 0 15px;
-
   border: 1px solid #ddd;
   border-radius: 10px;
-
   font-size: 15px;
   outline: none;
-
   box-sizing: border-box;
 }
 
 .search input:focus {
   border-color: var(--sub-color);
 }
+/* 검색하기 버튼 */
 .search button {
   border: none;
   background: none;
   padding: 0;
   cursor: pointer;
 }
+/* 검색 돋보기 이미지 */
 .search img {
   position: absolute;
   right: 15px;
@@ -67,6 +63,7 @@
   height: 20px;
   transform: translateY(-50%);
 }
+/* 맨 아래 수정하기 버튼 */
 .main-button {
   display: flex;
   justify-content: center;
@@ -91,10 +88,12 @@
 .main-button button:hover {
   opacity: 0.9;
 }
+/* 뒤로가기 버튼 */
 .main-button .back-button {
   background-color: var(--back-color);
   color: #555;
 }
+/* input박스의 모든 필드를 입력하지 않으면 비활성화 처리 */
 .main-button button:disabled {
   background-color: #ccc;
   color: white;

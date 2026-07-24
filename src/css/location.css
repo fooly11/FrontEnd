@@ -1,3 +1,4 @@
+/* 주소 메인페이지 목록 */
 .address-item {
   display: flex;
   align-items: center;
@@ -7,23 +8,29 @@
   height: 100%;
 }
 
+/* 주소 메인페이지 스크롤 관리 */
 .address-scroll {
   max-height: 310px; /* 원하는 높이 */
   overflow-y: auto;
 }
+
+/* 상세 주소 */
 .address-info {
   flex: 1;
   min-width: 0;
 }
 
+/* 상세 주소: 집 */
 .address-info h3 {
   margin: 0;
 }
 
+/* 상세주소: 경기도 용인시 수지구 */
 .address-info p {
   margin: 5px 0 0;
   word-break: break-word;
 }
+/* 수정하기 버튼 */
 .Ubutton {
   flex-shrink: 0;
 }
@@ -36,7 +43,7 @@
   cursor: pointer;
   white-space: nowrap;
 }
-
+/* 햄버거 버튼 */
 .hamburger-area {
   position: relative;
   display: flex;
@@ -50,7 +57,7 @@
   font-size: 28px;
   cursor: pointer;
 }
-
+/* 햄버거 버튼 내부 메뉴 =nav */
 .menu {
   position: absolute;
   left: 0;
@@ -70,6 +77,7 @@
   text-align: center;
   cursor: pointer;
 }
+/* 주소 앞에 체크 버튼, 사용자가 주소 선택 */
 .check-btn {
   flex-shrink: 0;
   border: #ccc;
@@ -79,7 +87,7 @@
   font-size: 20px;
   cursor: pointer;
 }
-
+/* 체크 버튼 누르면 주황색 */
 .check-btn.active {
   color: var(--main-color);
 }
