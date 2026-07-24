@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { getLocations } from "../api/locationApi";
 import { checkLocation } from "../api/locationApi";
