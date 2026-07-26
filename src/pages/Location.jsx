@@ -17,29 +17,37 @@ function Location() {
   const [isLogin, setIsLogin] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
+  //페이지 접속하자마자
   useEffect(() => {
-    checkLogin();
-    loadLocation();
+    checkLogin(); //로그인 확인
+    loadLocation(); //기본 페이지 로드
   }, []);
 
+  //현재 사용자가 저장한 주소 불러오기-> 백엔드에서 보내주는 데이터 이용
   const loadLocation = async () => {
-    const response = await getLocations();
-
-    setLocations(response.data.locations);
+    const response = await getLocations(); //백엔드 api호출
+    setLocations(response.data.locations); //사용자의 주소 배열 호출
+    if (response.data.locations.length > 0) {
+      setSelectedId(response.data.locations[0].selected_id); //주소 배열에 담긴 값이 있다면 대표 주소 호출
+      //-> css로 색상 표시
+    }
   };
+
+  //로그인 상태 확인
   const checkLogin = async () => {
-    const response = await axios.get("http://localhost:3000/regist/check", {
-      withCredentials: true,
-    });
+    const response = await axios.get(
+      "http://localhost:3000/regist/checkLogin",
+      {
+        withCredentials: true,
+      },
+    );
 
     setIsLogin(response.data.isLogin);
   };
-
   const handleCheck = async (id) => {
     try {
       // 화면 먼저 변경
       setSelectedId(id);
-
       // DB 업데이트
       await checkLocation(id);
     } catch (err) {

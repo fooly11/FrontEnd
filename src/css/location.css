@@ -30,6 +30,12 @@
   margin: 5px 0 0;
   word-break: break-word;
 }
+/* 스크롤 영역 공백 설정 */
+.address-scroll {
+  overflow-y: auto;
+  padding-bottom: 30px;
+  box-sizing: border-box;
+}
 /* 수정하기 버튼 */
 .Ubutton {
   flex-shrink: 0;
