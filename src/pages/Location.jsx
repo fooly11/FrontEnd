@@ -57,7 +57,7 @@ function Location() {
 
   return (
     <div className="location-container">
-      <div className="hamburger-area">
+      <div className="hamburger-area" onMouseLeave={() => setMenuOpen(false)}>
         <button
           className="hamburger-button"
           onClick={() => {
